@@ -41,9 +41,9 @@ my_dbt_project:
     dev:
       type: bigquery
       method: service-account
-      keyfile: /path/to/dbt-demo-service-account-key.json
+      keyfile: "{{ env_var('BIGQUERY_KEYFILE') }}"
       project: your-gcp-project-id
-      dataset: dbt_dev
+      dataset: "{{ env_var('BIGQUERY_DATASET') }}"
       threads: 4
       timeout_seconds: 300
       location: US
