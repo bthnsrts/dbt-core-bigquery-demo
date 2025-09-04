@@ -1,0 +1,34 @@
+# dbt_project.yml
+config-version: 2
+
+# Project name must be lowercase with underscores
+name: my_dbt_project
+version: "1.0.0"
+
+# Which profile to use
+profile: my_dbt_project
+
+# Project paths
+model-paths:
+  - models
+analysis-paths:
+  - analyses
+test-paths:
+  - tests
+seed-paths:
+  - seeds
+macro-paths:
+  - macros
+snapshot-paths:
+  - snapshots
+
+# Directories removed by `dbt clean`
+clean-targets:
+  - target
+  - dbt_packages
+
+# Model configs
+models:
+  my_dbt_project:
+    example:
+      +materialized: view

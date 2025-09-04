@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+  - name: customer_store_order_base
+    description: "customer-store-order"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: order_product_supply_base
+    description: "order-product-supply"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null

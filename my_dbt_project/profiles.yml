@@ -1,0 +1,12 @@
+my_dbt_project:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dbt-demo-471011
+      dataset:  "{{ env_var('BIGQUERY_DATASET') }}"
+      threads: 4
+      keyfile: "{{ env_var('BIGQUERY_KEYFILE') }}"
+      location: US      
+  target: dev
+  

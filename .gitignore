@@ -1,0 +1,24 @@
+# Ignore data directories
+seeds/jaffle-data/
+jaffle-data/
+
+# Ignore credentials and service account keys
+dbt-demo-service-account-key.json
+
+# Ignore user-specific files
+.user.yml
+
+# Ignore installed packages
+dbt_packages/
+
+# Ignore virtual environment
+.venv/
+
+# Default dbt directories
+target/
+logs/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
