@@ -82,6 +82,48 @@ dbt docs generate
 dbt docs serve
 ```
 
+#### Expected `dbt debug` Output
+
+When your configuration is successful, running `dbt debug` should produce output similar to this:
+
+```
+Running with dbt=1.5.1
+dbt version: 1.5.1
+python version: 3.9.7
+python path: /Users/username/.venv/bin/python
+os info: macOS-13.2.1-arm64-arm-64bit
+Using profiles.yml file at /Users/username/.dbt/profiles.yml
+Using dbt_project.yml file at /Users/username/Desktop/repositories/dbt_core_bq_project/dbt_project.yml
+
+Configuration:
+  profiles.yml file [OK found and valid]
+  dbt_project.yml file [OK found and valid]
+
+Required dependencies:
+  - git [OK found]
+
+Connection:
+  account: my-project-123456
+  database: my-project-123456
+  schema: dbt_dev
+  location: US
+  method: service-account
+  keyfile: /path/to/dbt-demo-service-account-key.json
+  timeout_seconds: 300
+  priority: interactive
+  Connection test: [OK connection ok]
+
+All checks passed!
+```
+
+Key indicators of success:
+- "profiles.yml file [OK found and valid]"
+- "dbt_project.yml file [OK found and valid]"
+- "Connection test: [OK connection ok]"
+- "All checks passed!"
+
+If you see errors, verify your configuration settings in the profiles.yml file and ensure your service account has the proper permissions.
+
 ## Project Structure
 ```
 .
